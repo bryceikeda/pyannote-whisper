@@ -1,0 +1,3 @@
+name: pyannote-whisper
+dependencies:
+  - python=3.10

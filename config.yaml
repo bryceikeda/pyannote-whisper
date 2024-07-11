@@ -1,0 +1,4 @@
+filenames:
+  audio_input_file: data/afjiv.wav
+  output_file: output/output.txt
+  include_timestamps: false

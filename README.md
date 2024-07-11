@@ -2,12 +2,24 @@
 
 Run ASR and speaker diarization based on whisper and pyannote.audio.
 
+
+## Installing and running through Anaconda
+1. conda env create --file environment.yml
+2. conda activate pyannote-whisper
+3. pip install .
+4. Accept pyannote/segmentation-3.0 user conditions
+5. Accept pyannote/speaker-diarization-3.1 user conditions
+6. Create access token at hf.co/settings/tokens.
+7. Add huggingface token to .env file with the line HUGGINGFACE_TOKEN=your_token
+8. Update config.yaml with name of input audio, the output text file name, and whether you want timestamps
+9. run python file, python pyannote_whisper.py
+10. Following the speech to text conversion, enter the names for each speaker when prompted
+
 ## Installation
 1. Install whisper.
 2. Install pyannote.audio.
 3. Downgrade setuptools to 59.5.0
 4. Downgrade speechbrain to 0.5.16
-
 
 ## Command-line usage
 
@@ -23,8 +35,8 @@ Transcription can also be performed within Python:
 import whisper
 from pyannote.audio import Pipeline
 from pyannote_whisper.utils import diarize_text
-pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization",
-                                    use_auth_token="your/token")
+pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization-3.1")
+
 model = whisper.load_model("tiny.en")
 asr_result = model.transcribe("data/afjiv.wav")
 diarization_result = pipeline("data/afjiv.wav")
