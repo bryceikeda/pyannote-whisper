@@ -12,7 +12,10 @@ Run ASR and speaker diarization based on whisper and pyannote.audio.
 6. Create access token at hf.co/settings/tokens.
 7. Add huggingface token to .env file with the line HUGGINGFACE_TOKEN=your_token
 8. Update config.yaml with name of input audio, the output text file name, and whether you want timestamps
-9. run python file, python pyannote_whisper.py
+   Note: You can use any of the [whisper](https://github.com/openai/whisper) models by changing the model name.
+9. Run python file:
+
+    python pyannote_whisper.py
 10. Following the speech to text conversion, enter the names for each speaker when prompted
 
 ## Installation

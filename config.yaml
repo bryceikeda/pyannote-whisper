@@ -1,4 +1,10 @@
 filenames:
   audio_input_file: data/afjiv.wav
   output_file: output/output.txt
+
+modelnames:
+  whisper: medium.en
+  pyannote: pyannote/speaker-diarization-3.1
+
+output:
   include_timestamps: false
